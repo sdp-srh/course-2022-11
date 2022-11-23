@@ -6,20 +6,20 @@ import java.util.Collections;
 public class SortList {
 	public static void main(String args[]) {
 		ArrayList<String> list = getPersonList();
-		/*
+
 		Collections.sort(list);
 		System.out.println("Collection Sort");
 		for (String s : list) {
 			System.out.println(s);
 		}
-		*/
-		
+		/*
 		ArrayList<String> bubbleSortedList = bubbleSort(getPersonList());
 		System.out.println("");
 		System.out.println("Bubble Sort");
 		for (String s : bubbleSortedList) {
 			System.out.println(s);
 		}
+		*/
 		
 	}
 
