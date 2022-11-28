@@ -1,4 +1,4 @@
-package db;
+package application;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -82,5 +82,17 @@ public class DBHandler {
 			e.printStackTrace();
 		}
 		return result;
+	}
+	
+	public void deletePersons() {
+		try {
+			Statement stmt = DBHandler.getConnection().createStatement();
+			String sql = "DELETE FROM \"Person\"";
+			stmt.execute(sql);
+			stmt.close();
+		} catch (SQLException e) {
+			System.out.println("An Error occured during delete Persons");
+			e.printStackTrace();
+		}
 	}
 }
