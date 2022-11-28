@@ -74,7 +74,7 @@ public class DBHandler {
 	            String lastname  = rs.getString("lastname");
 	            Person p = new Person(firstname, lastname);
 	            result.add(p);
-	         }	
+	        }	
 	        rs.close();
 			stmt.close();
 		} catch (SQLException e) {
