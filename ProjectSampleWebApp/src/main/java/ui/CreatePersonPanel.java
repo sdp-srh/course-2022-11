@@ -54,9 +54,7 @@ public class CreatePersonPanel extends JPanel implements ActionListener {
 		this.add(saveButton);
 	}
 
-	/**
-	 * performs the action when a button is clicked
-	 */
+	@Override
 	public void actionPerformed(ActionEvent e) {
 		// saves the person data in case the person command is provided
 		if (SAVE_PERSON_COMMAND.equals(e.getActionCommand())) {
@@ -68,7 +66,8 @@ public class CreatePersonPanel extends JPanel implements ActionListener {
 			DBHandler dbh = new DBHandler();
 			dbh.insertPerson(newPerson);
 			System.out.println("New Person created");
-		}	
+		}
+		
 	}
 	
 	
