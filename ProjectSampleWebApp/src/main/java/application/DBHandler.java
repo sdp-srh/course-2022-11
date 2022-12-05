@@ -83,4 +83,31 @@ public class DBHandler {
 		}
 		return result;
 	}
+	
+	/**
+	 * reads the persons from the database table and creates an array list with objects of type person
+	 * @return the list of persons
+	 */
+	public ArrayList<Person> searchPersons(String searchTerm) {
+		ArrayList<Person> result = new ArrayList<Person>();
+		try {
+			Statement stmt = DBHandler.getConnection().createStatement();
+			String sql = "SELECT * FROM \"Person\"";
+			sql+= " WHERE \"firstname\" LIKE '%"+searchTerm+"%'";
+			sql+= " OR \"lastname\" LIKE '%"+searchTerm+"%'";
+			ResultSet rs = stmt.executeQuery(sql);
+	        while ( rs.next() ) {
+	            String firstname = rs.getString("firstname");
+	            String lastname  = rs.getString("lastname");
+	            Person p = new Person(firstname, lastname);
+	            result.add(p);
+	         }	
+	        rs.close();
+			stmt.close();
+		} catch (SQLException e) {
+			System.out.println("An Error occured during read Persons");
+			e.printStackTrace();
+		}
+		return result;
+	}	
 }
