@@ -32,10 +32,10 @@ public class SearchPersonServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		String searchTerm = request.getParameter("term");
 		System.out.println(searchTerm);
 		if (searchTerm == null) {
+			response.setStatus(400);
 			response.getWriter().write("No Search Term provided");
 		}
 		else {
@@ -46,5 +46,4 @@ public class SearchPersonServlet extends HttpServlet {
 			response.getWriter().append(jsonString);
 		}
 	}
-
 }

@@ -21,14 +21,12 @@ public class CreatePerson extends HttpServlet {
      */
     public CreatePerson() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		String firstName = request.getParameter("fname");
 		String lastName = request.getParameter("lname");
 		Person person = new Person(firstName, lastName);
@@ -44,7 +42,6 @@ public class CreatePerson extends HttpServlet {
 		// here we can implement a post method.
 		// post can contain more data than get
 		// e.g. post is used to send images or other files
-
 	}
 
 }
