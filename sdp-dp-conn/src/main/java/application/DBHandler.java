@@ -95,4 +95,18 @@ public class DBHandler {
 			e.printStackTrace();
 		}
 	}
+	
+	public void deletePerson(Person p) {
+		try {
+			Statement stmt = DBHandler.getConnection().createStatement();
+			String sql = "DELETE FROM \"Person\"";
+			sql += " WHERE \"firstname\" = '"+p.getFirstName()+"'";
+			sql += " WHERE \"lastname\" = '"+p.getLastName()+"'";
+			stmt.execute(sql);
+			stmt.close();
+		} catch (SQLException e) {
+			System.out.println("An Error occured during delete Persons");
+			e.printStackTrace();
+		}
+	}
 }
