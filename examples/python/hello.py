@@ -1,4 +1,13 @@
 
 
-for i in range(7,10):
-    print(str(i))
+
+def multiply(x,y):
+    return x * y
+
+
+# for i in range(7,10):
+#    print(str(i))
+
+
+result = multiply(5,3)
+print(str(result))
